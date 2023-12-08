@@ -5,28 +5,25 @@ import BotCollection from "./BotCollection";
 function BotsPage() {
   //start here with your code for step one
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([])
+  const [bots, setBots] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8002")
+    fetch("http://localhost:8002/bots")
       .then((response) => response.json())
-      .then((result) => {
-        setIsLoaded(true);
-        setItems(result);
+      .then((data) => {
+     
+        // console.log(data)
+        setBots(data);
 
-        console.log(result)
+        
       });
+
   }, []);
-
-  
-
-
 
   return (
     <div>
       <YourBotArmy />
-      <BotCollection items={items} isLoaded={isLoaded}/>
+      <BotCollection bots={bots} />
     </div>
   )
 }

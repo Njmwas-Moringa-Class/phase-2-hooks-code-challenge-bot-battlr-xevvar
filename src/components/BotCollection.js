@@ -1,25 +1,11 @@
 import React, {useState, useEffect} from "react";
 import BotCard from './BotCard'
 
-function BotCollection() {
+function BotCollection({bots}) {
   // Your code here
  
   
-  const [bots, setBots] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:8002/bots")
-      .then((response) => response.json())
-      .then((data) => {
-     
-        console.log(data)
-        setBots(data);
-
-        
-      });
-
-  }, []);
-
+ 
 
 
   return (

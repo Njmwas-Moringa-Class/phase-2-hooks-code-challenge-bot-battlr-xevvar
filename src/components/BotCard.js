@@ -14,11 +14,10 @@ const botTypeClasses = {
 
 function BotCard({ bot, onAddToArmy }) {
 
-  function handleAddToArmy() {
-  
+  function handleAddToArmy(){
+    
     onAddToArmy(bot);
-  };
-
+  }
 
   return (
     <div className="ui column">
@@ -57,9 +56,7 @@ function BotCard({ bot, onAddToArmy }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() =>
-                  console.log("add code to connect event listener")
-                }              
+                onClick={() => onAddToArmy(bot) }              
               >
                 x
               </button>
